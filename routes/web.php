@@ -13,3 +13,4 @@ Route::get('/employee/{id}',[EmployeeController::class,'show'])->name('employee.
 Route::get('/employee/update/{id}',[EmployeeController::class,'edit'])->name('employee.edit');
 Route::put('/employee/update/{id}',[EmployeeController::class,'update'])->name('employee.update');
 Route::delete('/employee/delete/{id}',[EmployeeController::class,'destroy'])->name('employee.destroy');
+Route::post('/employee',[EmployeeController::class,'search'])->name('employee.search');

@@ -13,6 +13,7 @@
         <th scope="col">Job Title</th>
         <th scope="col">Salay</th>
         <th scope="col">Details</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
   
@@ -24,17 +25,15 @@
             <td>{{$employee->job_title}}</td>
             <td> {{$employee->salary}}</td>
             <td>
-                <div class="d-flex justify-content-center align-items-center">
-                    <!-- Details Button -->
-                    <a class="btn btn-primary me-2" href="{{ route('employee.show', $employee->id) }}">Details</a>
-                    
-                    <!-- Delete Form -->
-                    <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="btn btn-danger ms-2" value="Delete">
-                    </form>
-                </div>
+                <a class="btn btn-primary me-2" href="{{ route('employee.show', $employee->id) }}">Details</a>
+                      
+            </td>
+            <td>
+                <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" class="btn btn-danger ms-2" value="Delete">
+                </form>
             </td>
             
             
